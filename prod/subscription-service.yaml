@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: subscription_service
+  name: subscription-service
   labels:
     app: subscription_service
 spec:
