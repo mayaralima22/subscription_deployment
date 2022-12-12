@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscription-service
+
+spec:
+  selector:
+    app: subscription_service
+
+  type: ClusterIP
+  ports:
+    - port: 8000
+      targetPort: 8000
