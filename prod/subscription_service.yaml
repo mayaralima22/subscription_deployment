@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscription_service
+  labels:
+    app: subscription_service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subscription_service
+  template:
+    metadata:
+      labels:
+        app: subscription_service
+    spec:
+      containers:
+      - name: subscription_service
+        image: subscription_service
+        ports:
+        - containerPort: 8000
+        env:
+          - name: RABBIT_HOST
+            value: broker
+          - name: RABBIT_PORT
+            value: "5672"
+          - name: RABBIT_USER
+            valueFrom:
+              secretKeyRef:
+                name: rabbit-user
+                key: username
+          - name: RABBIT_PASS
+            valueFrom:
+              secretKeyRef:
+                name: rabbit-user
+                key: password
+          - name: QUEUE_SUBSCRIPTIONS
+            value: subscription_created
