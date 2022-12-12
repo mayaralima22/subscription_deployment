@@ -36,7 +36,8 @@ spec:
                 key: password
           - name: MONGODB_URL
             valueFrom:
-              - secretRef:
-                  name: subscription-mongo-secret
+              secretKeyRef:
+                name: subscription-mongo-secret
+                key: MONGODB_URL
           - name: QUEUE_SUBSCRIPTIONS
             value: subscription_created
