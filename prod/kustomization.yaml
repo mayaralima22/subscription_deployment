@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - subscription_service.yaml
+  - sub-service.yaml
+  - subscription_ingress.yaml
 images:
   - name: subscription_service
     newName: mayaralima22/subscription_service
