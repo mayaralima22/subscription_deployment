@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: subscription_service
+  name: subscription-service
   labels:
     app: subscription_service
 spec:
@@ -15,7 +15,7 @@ spec:
         app: subscription_service
     spec:
       containers:
-      - name: subscription_service
+      - name: subscription-service
         image: subscription_service
         ports:
         - containerPort: 8000
