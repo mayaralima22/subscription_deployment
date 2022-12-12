@@ -35,8 +35,8 @@ spec:
                 name: rabbit-user
                 key: password
           - name: MONGODB_URL
-              valueFrom:
-                secretKeyRef:
+            valueFrom:
+              - secretRef:
                   name: subscription-mongo-secret
           - name: QUEUE_SUBSCRIPTIONS
             value: subscription_created
