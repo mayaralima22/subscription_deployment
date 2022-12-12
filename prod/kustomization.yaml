@@ -5,4 +5,4 @@ resources:
 images:
   - name: subscription_service
     newName: mayaralima22/subscription_service
-    newTag: latest
+    newTag: 221212.c1534f4
