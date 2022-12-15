@@ -7,4 +7,4 @@ resources:
 images:
   - name: subscription_service
     newName: mayaralima22/subscription_service
-    newTag: "221215.236b2f1"
+    newTag: "221215.1fddd8b"
